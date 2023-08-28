@@ -9,9 +9,25 @@ public class Settings
     private readonly string _settingsFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "txtToMinecraftBook", "Settings.xml");
 
     public ProgramInfo programInfo = new();
+    public Paths paths = new();
+    public StendhalSpecifics stendhalSpecifics = new();
     public class ProgramInfo
     {
         public string Version = "v0.0.1";
+    }
+    public class Paths
+    {
+        public string Output = "";
+    }
+
+    public class StendhalSpecifics
+    {
+        public string FileEnding = ".stendhal";
+        public string BookAuthor = "txtToMinecraftBook";
+        public string PageBeginning = "#- ";
+        public int MaxLineNumber = 103;
+        public int MaxCharOnPage = 256;
+        public int MaxLineOnPage = 14;
     }
 
     public bool Save()
